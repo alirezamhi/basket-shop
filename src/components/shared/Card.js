@@ -1,8 +1,10 @@
-import React from 'react';
-import { shorten } from '../helper/functionshorten';
+import React , {useContext} from 'react';
+import { isCard, shorten , quantityconter} from '../helper/functionshorten';
 import { Link } from 'react-router-dom';
+import { cardcontext } from '../../context/Cardcontextprovider';
 
 const Card = ({productdata}) => {
+    const {state,dispatch}= useContext(cardcontext);
     return (
         <div>
            <img src={productdata.image}/>
@@ -11,7 +13,13 @@ const Card = ({productdata}) => {
            <div>
                <Link to={`/products/${productdata.id}`}>Details</Link>
                <div>
-                   <button>add</button>
+                   {
+                       isCard(state , productdata.id)?
+                       <button onClick={()=>dispatch({type:"INCREASE" , payload:productdata})}>+</button>:
+                       <button onClick={()=>dispatch({type:"ADD_ITEM" , payload:productdata})}>Add to card</button>
+                   }
+                   {quantityconter(state , productdata.id) ===1 && <button onClick={()=>dispatch({type:"REMOVE_ITEM",payload:productdata})}>remove</button>}
+                   {quantityconter(state , productdata.id) >1 && <button onClick={()=>dispatch({type:"DECREASE",payload:productdata})}>-</button>}
                </div>
            </div>
         </div>
