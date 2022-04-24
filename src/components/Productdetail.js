@@ -7,7 +7,7 @@ const Productdetail = (props) => {
     const id = props.match.params.id;
     const product = products[id-1];
     const {title , price , description , category ,image}=product; 
-
+    
     return (
         <div>
             <img src={image}/>

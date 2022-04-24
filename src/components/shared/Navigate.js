@@ -9,7 +9,7 @@ const Navigate = () => {
             <div>
                 <Link to="/products">Products</Link>
                 <div>
-                    <img src={shop}/>
+                    <Link to="/basket"><img src={shop}/></Link>
                     <span>{state.itemCounter}</span>
                 </div>
             </div>
