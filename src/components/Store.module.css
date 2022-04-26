@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 110px;
+    padding: 0 ;
+    justify-content: space-around;
+}
+@media(max-width:750px){
+    .container{
+        margin-top: 95px;  
+    }
+}
+@media(max-width:555px){
+    .container{
+        margin-top: 85px;  
+    }
+}

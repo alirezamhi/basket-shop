@@ -3,14 +3,14 @@ import React , { createContext, useReducer } from 'react';
 
 const initialState={
     selecedItems : [],
-    itemCounter : 0,
+    itemsCounter : 0,
     total : 0,
     checkout : false 
 }
-const sumItem = (item) => {
-    const itemCounter = item.reduce((total,product)=>total+product.quantity,0);
-    const total = item.reduce((total,product)=>total+product.quantity * product.price,0);
-    return {itemCounter,total};
+const sumItems = items => {
+    const itemsCounter = items.reduce((total, product) => total + product.quantity, 0);
+    let total = items.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+    return {itemsCounter, total}
 }
 
 const cartReducer = (state,action) => {
@@ -25,40 +25,41 @@ const cartReducer = (state,action) => {
             return {
                 ...state,
                 selecedItems : [...state.selecedItems],
-                ...sumItem(state.selecedItems)
+                ...sumItems(state.selecedItems),
+                checkout : false 
             }
         case "REMOVE_ITEM":
             const newstate = state.selecedItems.filter(item=>item.id !== action.payload.id)
             return {
                 ...state,
                 selecedItems : [...newstate],
-                ...sumItem(state.selecedItems)
+                ...sumItems(newstate)
             }
         case "INCREASE":
             const indexI = state.selecedItems.findIndex(item => item.id === action.payload.id);
             state.selecedItems[indexI].quantity++;
             return {
                 ...state,
-                ...sumItem(state.selecedItems)
+                ...sumItems(state.selecedItems)
             }
         case "DECREASE":
             const indexD = state.selecedItems.findIndex(item => item.id === action.payload.id);
             state.selecedItems[indexD].quantity--;
             return {
                 ...state,
-                ...sumItem(state.selecedItems)
+                ...sumItems(state.selecedItems)
             }
         case "CHECKOUT":
             return{
                 selecedItems : [],
-                itemCounter : 0,
+                itemsCounter : 0,
                 total : 0,
                 checkout : true 
             }
         case "CLEARE":
             return{
                 selecedItems : [],
-                itemCounter : 0,
+                itemsCounter : 0,
                 total : 0,
                 checkout : false   
             }
