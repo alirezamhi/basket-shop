@@ -80,13 +80,6 @@
 .linkcontainer button:hover{
     background-color: #0b499b;
 }
-@media(max-width:320px){
-    .cardimage{
-        width: 200px;
-        height: 180px;
-        padding: 8px;
-    }
-}
 @media(max-width:768px){
     .cardimage{
         width: 200px;
@@ -97,6 +90,44 @@
         margin: 20px 10px;
     }
 }
+@media(max-width:580px){
+    .container{
+        width: 350px;
+    }
+    .cardimage{
+        width: 230px;
+        height: 200px;
+    }
+    .container h3{
+        font-size: 1.4rem;
+    }
+    .container p {
+        font-size: 1rem;
+    }
+    .linkcontainer a {
+        font-size: 1.1rem;
+    }
+    .linkcontainer button{
+        font-size: 1.1rem;
+    }
+}
 
-
+@media(max-width:320px){
+    .cardimage{
+        width: 200px;
+        height: 180px;
+    }
+    .container h3{
+        font-size: 1.1rem;
+    }
+    .container p {
+        font-size: .9rem;
+    }
+    .linkcontainer a {
+        font-size: 0.9rem;
+    }
+    .linkcontainer button{
+        font-size: 0.9rem;
+    }
+}
 

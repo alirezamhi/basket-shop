@@ -1,0 +1,87 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px 30px 40px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 10px 25px;
+    background-color: rgb(255, 255, 255);
+}
+.image{
+    width: 80px;
+    height: 80px;
+}
+.textcontainer h3{
+    color: #1a73e8;
+    font-size: 1.2rem;
+}
+.textcontainer p{
+    color: green;
+    font-weight: 600;
+}
+.quantity{
+    width: 28px;
+    height: 28px;
+    background-color: orangered;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 27px;
+}
+.buttoncontainer {
+    display: flex;
+    align-items: center;
+}
+.buttoncontainer button{
+    width: 28px;
+    height: 28px;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #fff;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+}
+.buttoncontainer button img{
+    width: 20px;
+}
+.buttoncontainer button:hover{
+    background-color: #0b499b;
+}
+@media (max-width:870px){
+    .container{
+        margin: 0px 20px 20px 25px;
+    }
+}
+@media (max-width:790px){
+    .container{
+        margin: 0px 10px 20px 10px;
+    }
+}
+@media (max-width:460px){
+    .container{
+        display: block;
+    }
+    .buttoncontainer button{
+        margin: 6px 10px 0 0;
+    }
+}

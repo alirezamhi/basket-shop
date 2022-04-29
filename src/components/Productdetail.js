@@ -15,7 +15,7 @@ const Productdetail = (props) => {
             <div className={style.textcontainer}>
                 <h3>{title}</h3>
                 <p className={style.description}>{description}</p>
-                <p className={style.category}>{category}</p>
+                <p className={style.category}><span>Category: </span>{category}</p>
                 <div className={style.buttoncontainer}>
                     <span className={style.price}>{price}$</span>
                     <Link to="/products">back to shop</Link>
