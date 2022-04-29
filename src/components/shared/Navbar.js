@@ -2,7 +2,7 @@ import React ,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { cardcontext } from '../../context/Cardcontextprovider';
 import shop from "../../icon/shop.svg"
-import Style from "../shared/Navigate.module.css";
+import Style from "../shared/Navbar.module.css";
 const Navigate = () => {
     const {state} = useContext(cardcontext);
     return (

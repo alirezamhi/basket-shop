@@ -20,6 +20,7 @@ const Card = ({productdata}) => {
                        <button className={Style.smallbutton} onClick={()=>dispatch({type:"INCREASE" , payload:productdata})}>+</button>:
                        <button  onClick={()=>dispatch({type:"ADD_ITEM" , payload:productdata})}>Add to card</button>
                    }
+                   {quantityconter(state , productdata.id) >0 && <span className={Style.counter}>{quantityconter(state , productdata.id)}</span>}
                    {quantityconter(state , productdata.id) ===1 && <button className={Style.smallbutton} onClick={()=>dispatch({type:"REMOVE_ITEM",payload:productdata})}><img src={trash}/></button>}
                    {quantityconter(state , productdata.id) >1 && <button className={Style.smallbutton} onClick={()=>dispatch({type:"DECREASE",payload:productdata})}>-</button>}
                </div>
